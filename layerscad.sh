@@ -9,7 +9,7 @@ QCAD_MERGE=./qcad/qcad/merge
 rm -rf $OUTPUT_DIR
 mkdir -p $OUTPUT_DIR
 
-LAYERS=$(grep -o 'layer(".*")' $INPUT_FILE | sed 's/layer("\(.*\)")/\1/g')
+LAYERS=$(grep -o 'layer(".*")' $INPUT_FILE | tr -d '"' | grep -o "(.*)" | tr -d '(' | tr -d ')' | cut -d',' -f1)
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' > $XML_FILE
 echo '<merge xmlns="http://qcad.org/merge/elements/1.0/" unit="Millimeter">' >> $XML_FILE
