@@ -2,8 +2,6 @@ $fn=64;
 use <gear.scad>;
 use <layer.scad>;
 
-show_layer="1mm";
-
 // Number of teeth
 num_teeth    = 14;
 // Circular pitch
@@ -38,7 +36,7 @@ layer("cut-through")
 }
 
 // Cut
-layer("1mm")
+layer("1mm", "blue")
 {
     circle(r=top_radius, center=true);
 }

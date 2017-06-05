@@ -20,6 +20,12 @@ The path to the merge tool, can be set inside the `layerscad.sh` file.
         square([5,5]);
     }
 
+    later("{{ ANOTHER_LAYER_NAME }}", "green")
+    {
+        // This will be rendered in green
+        ...
+    }
+
 ## Usage (tool)
 After the file has been setup, one can generate the (possibly) combined `.DXF` file(s), by running:
 
